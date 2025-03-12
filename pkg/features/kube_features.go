@@ -987,6 +987,13 @@ const (
 	//
 	// Enables the image volume source.
 	ImageVolume featuregate.Feature = "ImageVolume"
+
+	// TODO(cnvergence): Remove when not applicable
+	// owner: @cnvergence
+	// alpha: v1.31
+	//
+	// GlobalServiceAccount is a feature gate that enables the cross-workspace service accounts feature.
+	GlobalServiceAccount featuregate.Feature = "GlobalServiceAccount"
 )
 
 func init() {
@@ -1333,4 +1340,5 @@ var defaultKubernetesFeatureGates = map[featuregate.Feature]featuregate.FeatureS
 	StorageNamespaceIndex: {Default: true, PreRelease: featuregate.Beta},
 
 	RecursiveReadOnlyMounts: {Default: true, PreRelease: featuregate.Beta},
+	GlobalServiceAccount:    {Default: false, PreRelease: featuregate.Alpha},
 }
